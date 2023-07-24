@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html><head>
+			
+		<title>01.0 Componente básico</title>
+		<base href="./">
+		<meta id="root-path" root-path="./">
+
+		<link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+			<link rel="stylesheet" href="lib/styles/obsidian-styles.css">
+			<link rel="stylesheet" href="lib/styles/theme.css">
+			<link rel="stylesheet" href="lib/styles/plugin-styles.css">
+			<link rel="stylesheet" href="lib/styles/snippets.css">
+			<style>  </style>
+
+			
+			<!-- Graph View Data -->
+			<script>
+			let nodes=
+{"nodeCount":3,"linkCount":0,"radii":[null,null,null],"labels":["01.2 Estados y gestionadores de sus cambios","01.0 Componente básico","01.1 Enrutador y rutas"],"paths":["01.2-estados-y-gestionadores-de-sus-cambios.html","01.0-componente-básico.html","01.1-enrutador-y-rutas.html"],"linkSources":[],"linkTargets":[]};
+			let attractionForce = 1;
+			let linkLength = 10;
+			let repulsionForce = 150;
+			let centralForce = 3;
+			let edgePruning = 100;
+			</script>
+			
+<script type="module" src="lib/scripts/graph_view.js"></script>
+
+<script src="lib/scripts/graph_wasm.js"></script>
+
+<script src="lib/scripts/tinycolor.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="lib/scripts/webpage.js"></script>
+
+			</head><body class="theme-dark mod-windows is-frameless is-hidden-frameless obsidian-app show-inline-title show-view-header is-maximized" style="--zoom-factor:1; --font-text-size:16px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;"><div class="webpage-container"><div class="sidebar-left sidebar"><div class="sidebar-content"><div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="tree-container file-tree mod-nav-indicator" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">PFE</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div><div class="tree-scroll-area"></div></div></div></div><div class="document-container"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" style="tab-size: 4;"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;"><div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div><div class="mod-header"><div class="inline-title" contenteditable="true" spellcheck="true" autocapitalize="on" tabindex="-1" enterkeyhint="done">01.0 Componente básico</div></div><div><p>El elemento componente será el primero en utilizarse y corresponde en primera instancia al equivalente de cada página web que se trabajará.</p></div><div><p>Mas adelante también este concepto se utilizará de forma extendida a subcomponentes o fragmentos.</p></div><div><h2 data-heading="Plantilla inicial" id="Plantilla_inicial" style="display: flex;"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Plantilla inicial</h2></div><div><p>Para el curso se presenta la primera plantilla de un componente vacío de la siguiente forma:<br>
+Archivo: <code>NombreComponente.jsx</code></p></div><div><pre class="language-js" tabindex="0"><code class="language-js is-loaded"><span class="token comment">// core - react</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useState<span class="token punctuation">,</span> useEffect <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span>  
+  
+<span class="token comment">// View  </span>
+<span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">NombreComponente</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>  
+  
+	<span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>  
+		<span class="token operator">&lt;</span><span class="token operator">&gt;</span>  
+			<span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span><span class="token maybe-class-name">Contenido</span> del componente<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span> 
+		<span class="token operator">&lt;</span><span class="token operator">/</span><span class="token operator">&gt;</span>  
+	<span class="token punctuation">)</span>  
+<span class="token punctuation">}</span>  
+  
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">NombreComponente</span>
+</code><button class="copy-code-button">Copy</button></pre></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></div><div class="callout-title-inner">Almacenamiento</div></div><div class="callout-content">
+<p>Se recomienda siempre trabajar los componentes en <code>/src/components</code>, y los subcomponentes (o también llamado fragmentos) en <code>/src/components/fragments</code></p>
+</div></div></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></div><div class="callout-title-inner">Notación</div></div><div class="callout-content">
+<p>Los nombres de los componentes y de su archivo correspondiente se trabajan en notación <a data-tooltip-position="top" aria-label="https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/#kebab-case" rel="noopener" class="external-link" href="https://www.freecodecamp.org/news/snake-case-vs-camel-case-vs-pascal-case-vs-kebab-case-whats-the-difference/#kebab-case" target="_blank">PascalCase</a> </p>
+</div></div></div><div><div data-callout-metadata="" data-callout-fold="" data-callout="example" class="callout"><div class="callout-title"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></div><div class="callout-title-inner">Ejercicio</div></div><div class="callout-content">
+<p>Cree un componente nuevo que muestre un título y un párrafo de contenido seleccionado por usted, llamado "<code>Informacion</code>"</p>
+</div></div></div><div class="mod-footer"><div class="embedded-backlinks" style="display: none;"></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" width="512px" height="512px"></canvas>
+		</div>
+		</div><div class="tree-container outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div><div class="tree-scroll-area"><div class="tree-item mod-tree-heading" data-depth="1"><div class="tree-item-contents"><a class="tree-item-link" href="#01.0_Componente_básico"><span class="tree-item-title">01.0 Componente básico</span></a></div><div class="tree-item-children"><div class="tree-item mod-tree-heading" data-depth="2"><div class="tree-item-contents"><a class="tree-item-link" href="#Plantilla_inicial"><span class="tree-item-title">Plantilla inicial</span></a></div><div class="tree-item-children"></div></div></div></div></div></div></div></div></div></body></html>
