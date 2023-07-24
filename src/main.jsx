@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Tareas from './components/tareas/Tareas.jsx'
+import Tareas from './components/tareas/Tareas'
 
 const router = createBrowserRouter([
   {

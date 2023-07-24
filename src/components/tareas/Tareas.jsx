@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import AgregarTareaFragment from "./fragments/AgregarTareaFragment"
+import MostrarTareasFragment from "./fragments/MostrarTareasFragments"
 
 const ListaEjemplo = [
     {
@@ -18,12 +20,13 @@ const ListaEjemplo = [
 const Tareas = () => {
     const [tareas, setTareas] = useState(ListaEjemplo)
     const [nombreTarea, SetNombreTarea] = useState('')
+
     const handleModificarTarea = (evento) => {
         console.log(evento.target.value)
         SetNombreTarea(evento.target.value)
     }
 
-    const handleBotonAgregarTarea = (evento) => {
+    const handleAgregarTarea = (evento) => {
         if (nombreTarea === '') {
             alert('Debes escribir una tarea')
         } else {
@@ -37,6 +40,13 @@ const Tareas = () => {
         }
     }
 
+    const handleEliminarTarea = (id) => {
+        let tareasFiltradas = tareas.filter(tarea => {
+            return tarea.id !== id
+        })        
+        setTareas(tareasFiltradas)
+    }
+
     return (
 
         <>
@@ -44,35 +54,20 @@ const Tareas = () => {
                 <div className="col-12">
                     <h1>Tareas</h1>
                 </div>
-                <div className="col-12">
-                    <label htmlFor="nombre-tarea">Añadir nueva tarea</label>
-                    <input type="text" 
-                    onChange={handleModificarTarea} 
-                    className="form-control my-2" 
-                    id="nombre-tarea" 
-                    value={nombreTarea}
-                    />
 
-                    <button type="button" 
-                    className="btn btn-primary"
-                    onClick={handleBotonAgregarTarea}
-                    >Añadir</button>
-                </div>
+                <AgregarTareaFragment
+                nombreTarea={nombreTarea}
+                handleModificarTarea={handleModificarTarea}
+                handleAgregarTarea={handleAgregarTarea}
+                />
+
                 <div className="col-12 mt-4"> 
                     <h2>Lista de tareas</h2>
                 </div>
-                <div>
-                <ul className="list-group">
-                    {
-                        tareas.map(function(tarea){
-                            return (
-                                <li className="list-group-item" key={tarea.id}>{tarea.nombre}</li>
-                            )
-
-                        })
-                    }
-                </ul>
-                </div>
+                <MostrarTareasFragment
+                tareas={tareas}
+                handleEliminarTarea={handleEliminarTarea}
+                />
             </div>
         </>
     )
